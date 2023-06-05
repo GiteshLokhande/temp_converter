@@ -1,0 +1,41 @@
+<html>
+	<head>	
+		<title> Temperature Converter </title>
+		<style> 
+			* { font-size: 50px ;}
+			body { background-color : lightgreen ;}
+		</style>
+
+	</head>
+
+	<body>
+	<center>
+		<h1> Temperature Converter </h1>
+		
+		<form>
+			<input type="number" step="any" placeholder="enter Temperature" id="cel" />
+			</br></br>
+			<input type="number" step="any" placeholder="enter Fahrenheit" id="fah" />
+		</form>
+
+		<script>
+			let cel = document.getElementById("cel");	
+			let fah = document.getElementById("fah");
+	
+			// anonymous function used below as no function name is given
+			cel.addEventListener("input",function() {
+				let c = parseFloat(cel.value);
+				let f = (c * 9/5) + 32;
+				fah.value = f;
+			});	
+		
+			fah.addEventListener("input",function() {
+				let f = parseFloat(fah.value);
+				let c = (f - 32) * 5/9;
+				cel.value = c;
+			});
+		</script>
+
+	</center>
+	</body>
+</html>
